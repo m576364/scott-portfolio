@@ -4,12 +4,39 @@ import {
   about,
   highlights,
   experience,
+  education,
   skills,
   featuredProjects,
   linkedinHighlights,
 } from './content.js';
 import { escapeHtml } from './utils.js';
 import { mountChrome, renderContactActions } from './shell.js';
+
+const educationSection =
+  education?.length > 0
+    ? `
+    <section id="education" class="section reveal">
+      <div class="section-head">
+        <p class="eyebrow mono">02b — education</p>
+        <h2>Where I trained</h2>
+      </div>
+      <div class="timeline">
+        ${education
+          .map(
+            (ed) => `
+          <article class="timeline-card">
+            <div class="timeline-meta">
+              <h3>${escapeHtml(ed.credential)}</h3>
+              <p class="org">${escapeHtml(ed.school)}</p>
+              ${ed.period ? `<p class="period mono">${escapeHtml(ed.period)}</p>` : ''}
+            </div>
+            <p class="note">${escapeHtml(ed.detail || '')}</p>
+          </article>`
+          )
+          .join('')}
+      </div>
+    </section>`
+    : '';
 
 const linkedinSection =
   linkedinHighlights.length > 0
@@ -20,8 +47,9 @@ const linkedinSection =
         <h2>What I surface from the profile</h2>
       </div>
       <p class="section-intro">
-        Curated highlights mirrored from LinkedIn-style accomplishments. Paste your profile URL in
-        <span class="mono">src/content.js</span> to enable the LinkedIn buttons.
+        Curated from
+        <a href="${escapeHtml(site.links.linkedin)}" target="_blank" rel="noreferrer">linkedin.com/in/scott-streamer</a>.
+        Full credential links live on the certifications page.
       </p>
       <div class="highlight-cards">
         ${linkedinHighlights
@@ -54,7 +82,7 @@ mountChrome({
           <span class="display-role">${escapeHtml(site.role)}</span>
         </h1>
         <p class="lede">${escapeHtml(site.tagline)}</p>
-        <p class="hero-sub mono">${escapeHtml(site.fullName)}</p>
+        <p class="hero-sub mono">${escapeHtml(site.fullName)} · ${escapeHtml(site.location)}</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#contact">Say hello</a>
           <a class="btn btn-ghost" href="/projects.html">See projects</a>
@@ -128,6 +156,8 @@ mountChrome({
         <a class="btn btn-ghost" href="/projects.html">Full case studies</a>
       </div>
     </section>
+
+    ${educationSection}
 
     ${linkedinSection}
 

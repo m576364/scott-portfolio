@@ -1,22 +1,17 @@
 /**
  * Site-wide identity and home-page content.
- * Edit this file (and projects.js / certifications.js) to update the portfolio.
+ * Sourced in part from https://www.linkedin.com/in/scott-streamer/
  */
 export const site = {
   name: 'Scott',
   fullName: 'Scott H Streamer',
-  role: 'Cyber & systems builder',
+  role: 'Assoc IT Spec — CyberSecOps at Maximus',
   tagline:
-    'I turn messy requirements into clear technical stories, working systems, and capture that actually holds up.',
-  location: 'United States',
-  /** Public contact email. Leave empty to hide the mailto button until set. */
-  email: '',
+    'Cybersecurity operator and builder focused on mission systems, cloud security, and practical tooling for capture and ops.',
+  location: 'Lakebay, Washington, United States',
+  email: 'scott.streamer@gmail.com',
   links: {
-    /**
-     * Paste your LinkedIn profile URL here (example: https://www.linkedin.com/in/your-handle).
-     * Leave empty to hide LinkedIn buttons until set.
-     */
-    linkedin: '',
+    linkedin: 'https://www.linkedin.com/in/scott-streamer/',
     github: 'https://github.com/m576364',
     githubProfile: 'https://github.com/m576364',
     portfolioRepo: 'https://github.com/m576364/scott-portfolio',
@@ -26,78 +21,118 @@ export const site = {
 
 export const about = {
   lead:
-    'I live at the intersection of cybersecurity, federal capture, and building tools people can actually use.',
+    'Associate IT Specialist in Cybersecurity Operations at Maximus, with a B.S. in Cybersecurity (Honors) from Grand Canyon University.',
   body: [
-    'Day to day that means reading dense solicitations, mapping capability to evidence, and shipping clean briefs that sound like a human wrote them.',
-    'Off the clock I like crafting interfaces with a little personality, fast local workflows, and learning systems end to end.',
+    'I bring hands-on grounding in ethical hacking, SOC operations, and digital forensics, plus a strong pull toward securing mission-critical systems.',
+    'I keep growing in cloud security, automation, and IT technology development, and I am open to connecting across cybersecurity, government tech, and IT security.',
   ],
 };
 
 export const highlights = [
-  { label: 'Focus', value: 'Cyber · Capture · Build' },
-  { label: 'Mode', value: 'Hands-on' },
-  { label: 'Stack', value: 'Web · Python · Edge' },
+  { label: 'Role', value: 'CyberSecOps · Maximus' },
+  { label: 'Degree', value: 'B.S. Cybersecurity · Honors' },
+  { label: 'Base', value: 'Lakebay, WA' },
 ];
 
 /**
- * Curated LinkedIn-style highlights. Paste bullets from your profile when ready.
- * Shown on the home page when the array has entries.
+ * Curated highlights mirrored from LinkedIn accomplishments.
  */
 export const linkedinHighlights = [
   {
-    title: 'Hackathon builder',
+    title: 'CompTIA Security+ (SY0-701)',
     detail:
-      'Shipped NDIA Blackbird post-quantum tactical tunnel work and Warhacker airgap drone / fire tracking demos on public GitHub.',
+      'Earned Security+ with focus on network security, risk management, and threat mitigation for resilient cyber operations.',
   },
   {
-    title: 'Capture response systems',
+    title: 'AWS Certified Cloud Practitioner',
     detail:
-      'Built an evidence-gated past-performance and proposal response library for federal cyber pursuits (private org repo).',
+      'Verified AWS cloud fundamentals credential supporting cloud security and IT technology development goals.',
+  },
+  {
+    title: 'ISC2 Certified in Cybersecurity (CC)',
+    detail:
+      'Entry-level ISC2 certification covering network security, access control, and core cyber concepts.',
+  },
+  {
+    title: 'Google career certificates',
+    detail:
+      'Completed Google Cybersecurity and Google IT Support Professional Certificates with practice-based coursework in SIEM, Linux, SQL, networking, and support.',
   },
 ];
 
 export const experience = [
   {
-    title: 'Capture & proposal engineering',
-    org: 'Federal cyber pursuits',
-    period: 'Recent',
+    title: 'Security Operator / Assoc IT Spec — CyberSecOps',
+    org: 'Maximus',
+    period: 'Jun 2025 – Present · Hybrid',
     points: [
-      'Structured past-performance and capability responses for DoD and civilian cyber opportunities.',
-      'Built scorecards, tripwire analyses, and reusable language packs that stay evidence-gated.',
+      'Cybersecurity operations supporting mission-critical systems and secure operating environments.',
+      'Continuing growth in cloud security, automation, and IT technology development alongside day-to-day SecOps work.',
     ],
   },
   {
-    title: 'Hackathon systems',
-    org: 'NDIA · Warhacker',
-    period: '2025–2026',
+    title: 'Operations Support Assistant',
+    org: 'Grand Canyon Education, Inc.',
+    period: 'Jan 2024 – Jun 2025 · Phoenix, AZ · Part-time',
     points: [
-      'Post-quantum tactical edge tunnel demonstrator with hybrid ML-KEM / X25519 session setup.',
-      'Airgapped drone telemetry and fire-tracking stack packaged with Zarf for offline Kubernetes.',
+      'Supported the Operations Support Assistant Team Manager with operational workflows.',
+      'Used Microsoft Excel for data analytics supporting Grand Canyon University operations.',
     ],
   },
   {
-    title: 'Systems & automation',
-    org: 'Personal / team tooling',
-    period: 'Ongoing',
+    title: 'eCommerce Lead and Retail Specialist',
+    org: 'Kroger',
+    period: 'Aug 2020 – Mar 2026 · Washington',
     points: [
-      'Local-first workflows for research, drafting, and packaging deliverables.',
-      'Small sites and scripts that remove friction without turning into a platform science project.',
+      'Assembled and delivered online orders and served as acting manager when appointed.',
+      'Onboarded and trained new employees, troubleshot issues, and delivered customer service.',
     ],
+  },
+  {
+    title: 'Lead Lifeguard and Swim Instructor',
+    org: 'Sammamish Family YMCA',
+    period: 'Apr 2022 – Feb 2023 · Washington',
+    points: [
+      'Lead lifeguard among a group of about 40, and taught swimming lessons for ages 4–50.',
+      'Onboarded and trained new lifeguards and swim instructors.',
+    ],
+  },
+];
+
+export const education = [
+  {
+    school: 'Grand Canyon University',
+    credential: 'Bachelor of Science in Cybersecurity',
+    detail: 'Computer and Information Sciences · Honors College',
+    period: 'Aug 2022 – May 2025',
+  },
+  {
+    school: 'Bellevue College',
+    credential: 'Associate of Arts and Sciences (AAS)',
+    detail: '',
+    period: '',
   },
 ];
 
 export const skills = [
   {
     group: 'Cyber & mission',
-    items: ['RMF / ATO literacy', 'SOC concepts', 'Zero Trust framing', 'PQC awareness', 'Threat-aware writing'],
+    items: [
+      'SOC / SecOps',
+      'Network security',
+      'Threat & vulnerability awareness',
+      'SIEM / IDS concepts',
+      'Digital forensics foundations',
+      'Ethical hacking foundations',
+    ],
   },
   {
-    group: 'Capture',
-    items: ['Requirement mapping', 'Past performance fit', 'Solutions briefs', 'Evidence gates'],
+    group: 'Cloud & IT',
+    items: ['AWS fundamentals', 'Cloud security interest', 'Technical support', 'Linux', 'Python', 'SQL'],
   },
   {
-    group: 'Build',
-    items: ['TypeScript / JS', 'Python', 'React', 'Go (tunnel demos)', 'Zarf / airgap packaging', 'Git'],
+    group: 'Build & capture',
+    items: ['HTML / CSS / JS', 'React demos', 'Python scripting', 'Zarf / airgap packaging', 'Evidence-gated capture tooling'],
   },
 ];
 

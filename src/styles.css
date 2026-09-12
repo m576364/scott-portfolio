@@ -109,11 +109,8 @@ a {
   font-size: 0.78rem;
 }
 
-.section-intro {
-  max-width: 40rem;
-  color: var(--muted);
-  line-height: 1.55;
-  margin: -0.5rem 0 1.5rem;
+.section-intro a {
+  color: var(--signal);
 }
 
 .featured-grid {
@@ -561,11 +558,17 @@ a {
 
 .cert-badge {
   font-size: 0.65rem;
-  color: var(--ember);
-  border: 1px solid rgba(255, 107, 74, 0.35);
+  color: var(--signal);
+  border: 1px solid rgba(61, 255, 181, 0.35);
   border-radius: 999px;
   padding: 0.25rem 0.55rem;
   white-space: nowrap;
+}
+
+.cert-detail.is-placeholder .cert-badge,
+.cert-card.is-placeholder .cert-badge {
+  color: var(--ember);
+  border-color: rgba(255, 107, 74, 0.35);
 }
 
 .cert-card.is-placeholder {
