@@ -3,7 +3,7 @@
 Personal portfolio for **Associate IT Specialist — CyberSecOps** work, with a Junior Cyber Engineer trajectory.
 
 **Repo:** https://github.com/m576364/scott-portfolio  
-**Live (after Pages enable):** https://m576364.github.io/scott-portfolio/
+**Live:** https://m576364.github.io/scott-portfolio/
 
 ## Run locally
 
@@ -12,7 +12,7 @@ npm install
 npm run dev
 ```
 
-Opens at http://localhost:5173
+Opens at http://localhost:5173 (or the next free port if 5173 is taken).
 
 ## Pages
 
@@ -31,7 +31,7 @@ Opens at http://localhost:5173
 | `src/projects.js` | Case studies + optional `images` arrays |
 | `src/certifications.js` | Cert list and license URLs |
 
-### Intake slots
+### Intake slots (add when ready)
 
 1. Resume: put `public/resume.pdf`, set `site.links.resume = 'resume.pdf'`
 2. Screenshots: put files under `public/projects/<id>/`, reference in `projects.js` `images`
@@ -48,9 +48,11 @@ On GitHub Actions, `base` is `/scott-portfolio/` for project Pages hosting.
 
 ## Deploy (GitHub Pages)
 
-1. Repo **Settings → Pages → Source: GitHub Actions**
-2. Push to `main` (workflow: `.github/workflows/deploy-pages.yml`)
-3. Site publishes to `https://m576364.github.io/scott-portfolio/`
+Already configured. Push to `main` runs `.github/workflows/deploy-pages.yml` and publishes to:
+
+https://m576364.github.io/scott-portfolio/
+
+If Pages ever needs a reset: repo **Settings → Pages → Source: GitHub Actions**.
 
 ## Security posture
 
@@ -60,4 +62,8 @@ On GitHub Actions, `base` is `/scott-portfolio/` for project Pages hosting.
 - Dependabot for npm and GitHub Actions
 - Escape all dynamic HTML via `src/utils.js`
 
-See `/security.html` on the live site for the human-readable summary.
+See https://m576364.github.io/scott-portfolio/security.html for the human-readable summary.
+
+## Day-to-day
+
+Work locally with `npm run dev`, commit, push to `main`. The live site updates from Actions. No local server needs to stay running when you are done for the day.
