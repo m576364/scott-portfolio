@@ -8,8 +8,8 @@ export function escapeHtml(value) {
 }
 
 export function externalAttrs(href) {
-  if (!href || href.startsWith('/') || href.startsWith('#')) {
+  if (!href || href.startsWith('/') || href.startsWith('#') || href.startsWith('mailto:')) {
     return '';
   }
-  return ' target="_blank" rel="noreferrer"';
+  return ' target="_blank" rel="noopener noreferrer"';
 }

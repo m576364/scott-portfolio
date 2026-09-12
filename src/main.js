@@ -8,8 +8,10 @@ import {
   skills,
   featuredProjects,
   linkedinHighlights,
+  statusChips,
 } from './content.js';
 import { escapeHtml } from './utils.js';
+import { withBase } from './base.js';
 import { mountChrome, renderContactActions } from './shell.js';
 
 const educationSection =
@@ -17,7 +19,7 @@ const educationSection =
     ? `
     <section id="education" class="section reveal">
       <div class="section-head">
-        <p class="eyebrow mono">02b — education</p>
+        <p class="eyebrow mono">02b // education</p>
         <h2>Where I trained</h2>
       </div>
       <div class="timeline">
@@ -43,13 +45,13 @@ const linkedinSection =
     ? `
     <section id="linkedin" class="section reveal">
       <div class="section-head">
-        <p class="eyebrow mono">03 — linkedin highlights</p>
+        <p class="eyebrow mono">03 // credentials signal</p>
         <h2>What I surface from the profile</h2>
       </div>
       <p class="section-intro">
         Curated from
-        <a href="${escapeHtml(site.links.linkedin)}" target="_blank" rel="noreferrer">linkedin.com/in/scott-streamer</a>.
-        Full credential links live on the certifications page.
+        <a href="${escapeHtml(site.links.linkedin)}" target="_blank" rel="noopener noreferrer">linkedin.com/in/scott-streamer</a>.
+        Full verify links live on the certifications page.
       </p>
       <div class="highlight-cards">
         ${linkedinHighlights
@@ -74,19 +76,23 @@ mountChrome({
         <div class="orb orb-a"></div>
         <div class="orb orb-b"></div>
         <div class="grid-fade"></div>
+        <div class="scanlines"></div>
       </div>
       <div class="hero-inner">
-        <p class="eyebrow mono">portfolio // local + github</p>
+        <p class="eyebrow mono">portfolio // cybersecops</p>
         <h1 class="display">
           <span class="display-name">${escapeHtml(site.name)}</span>
           <span class="display-role">${escapeHtml(site.role)}</span>
         </h1>
         <p class="lede">${escapeHtml(site.tagline)}</p>
-        <p class="hero-sub mono">${escapeHtml(site.fullName)} · ${escapeHtml(site.location)}</p>
+        <p class="hero-sub mono">${escapeHtml(site.fullName)} · ${escapeHtml(site.employer)} · ${escapeHtml(site.location)}</p>
+        <ul class="status-chips" aria-label="Status">
+          ${statusChips.map((chip) => `<li class="mono">${escapeHtml(chip)}</li>`).join('')}
+        </ul>
         <div class="cta-row">
-          <a class="btn btn-primary" href="#contact">Say hello</a>
-          <a class="btn btn-ghost" href="/projects.html">See projects</a>
-          <a class="btn btn-ghost" href="/certifications.html">Certifications</a>
+          <a class="btn btn-primary" href="${withBase('index.html#contact')}">Open to Jr Cyber Engineer conversations</a>
+          <a class="btn btn-ghost" href="${withBase('projects.html')}">See projects</a>
+          <a class="btn btn-ghost" href="${withBase('certifications.html')}">Certifications</a>
         </div>
         <ul class="highlight-strip">
           ${highlights
@@ -104,7 +110,7 @@ mountChrome({
 
     <section id="about" class="section reveal">
       <div class="section-head">
-        <p class="eyebrow mono">01 — about</p>
+        <p class="eyebrow mono">01 // about</p>
         <h2>Who I am when the slides are off</h2>
       </div>
       <div class="about-grid">
@@ -117,7 +123,7 @@ mountChrome({
 
     <section id="work" class="section reveal">
       <div class="section-head">
-        <p class="eyebrow mono">02 — work</p>
+        <p class="eyebrow mono">02 // work</p>
         <h2>What I have been building toward</h2>
       </div>
       <div class="timeline">
@@ -142,7 +148,7 @@ mountChrome({
         ${featuredProjects
           .map(
             (p) => `
-          <a class="project-card project-card-link" href="${escapeHtml(p.href)}">
+          <a class="project-card project-card-link" href="${withBase(p.href)}">
             <h3>${escapeHtml(p.name)}</h3>
             <p>${escapeHtml(p.blurb)}</p>
             <ul class="tags">
@@ -153,7 +159,7 @@ mountChrome({
           .join('')}
       </div>
       <div class="cta-row">
-        <a class="btn btn-ghost" href="/projects.html">Full case studies</a>
+        <a class="btn btn-ghost" href="${withBase('projects.html')}">Full case studies</a>
       </div>
     </section>
 
@@ -163,10 +169,10 @@ mountChrome({
 
     <section id="skills" class="section reveal">
       <div class="section-head">
-        <p class="eyebrow mono">04 — skills</p>
+        <p class="eyebrow mono">04 // skills</p>
         <h2>Tools I reach for</h2>
       </div>
-      <div class="skills-grid">
+      <div class="skills-grid skills-grid-4">
         ${skills
           .map(
             (group) => `
@@ -183,11 +189,11 @@ mountChrome({
 
     <section id="contact" class="section contact reveal">
       <div class="section-head">
-        <p class="eyebrow mono">05 — contact</p>
+        <p class="eyebrow mono">05 // contact</p>
         <h2>Let's build something</h2>
       </div>
       <p class="contact-copy">
-        Based in ${escapeHtml(site.location)}. Open to conversations about cyber, capture, and useful software.
+        Based in ${escapeHtml(site.location)}. Open to Junior Cyber Engineer conversations across cyber, detection, cloud, and useful software.
       </p>
       <div class="cta-row">
         ${renderContactActions()}

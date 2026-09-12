@@ -1,0 +1,6 @@
+Contact: mailto:scott.streamer@gmail.com
+Contact: https://www.linkedin.com/in/scott-streamer/
+Expires: 2027-09-12T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://m576364.github.io/scott-portfolio/.well-known/security.txt
+Policy: https://github.com/m576364/scott-portfolio/blob/main/SECURITY.md

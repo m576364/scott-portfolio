@@ -1,73 +1,85 @@
 /**
  * Site-wide identity and home-page content.
  * Sourced in part from https://www.linkedin.com/in/scott-streamer/
+ *
+ * Intake slots (drop assets when ready):
+ * - Resume PDF → public/resume.pdf and set links.resume = 'resume.pdf'
+ * - Project screenshots → add image paths under each project in projects.js
+ * - Maximus-safe SecOps bullets → replace experience[0].points when approved
  */
 export const site = {
   name: 'Scott',
   fullName: 'Scott H Streamer',
-  role: 'Assoc IT Spec — CyberSecOps at Maximus',
+  role: 'Associate IT Specialist — CyberSecOps',
   tagline:
-    'Cybersecurity operator and builder focused on mission systems, cloud security, and practical tooling for capture and ops.',
+    'CyberSecOps at Maximus, building toward Junior Cyber Engineer work across detection, cloud security, and hands-on systems.',
   location: 'Lakebay, Washington, United States',
   email: 'scott.streamer@gmail.com',
+  employer: 'Maximus',
   links: {
     linkedin: 'https://www.linkedin.com/in/scott-streamer/',
     github: 'https://github.com/m576364',
     githubProfile: 'https://github.com/m576364',
     portfolioRepo: 'https://github.com/m576364/scott-portfolio',
+    /** Set to 'resume.pdf' after placing public/resume.pdf */
     resume: '',
   },
 };
 
+export const statusChips = [
+  'Active CyberSecOps',
+  'Honors B.S. Cybersecurity',
+  'Security+ · CySA+ · SecAI+',
+  'Open to Jr Cyber Engineer roles',
+];
+
 export const about = {
   lead:
-    'Associate IT Specialist in Cybersecurity Operations at Maximus, with a B.S. in Cybersecurity (Honors) from Grand Canyon University.',
+    'Associate IT Specialist — CyberSecOps at Maximus, with a B.S. in Cybersecurity (Honors) from Grand Canyon University.',
   body: [
-    'I bring hands-on grounding in ethical hacking, SOC operations, and digital forensics, plus a strong pull toward securing mission-critical systems.',
-    'I keep growing in cloud security, automation, and IT technology development, and I am open to connecting across cybersecurity, government tech, and IT security.',
+    'I work where operations meets engineering: securing mission-critical systems, strengthening detection intuition, and growing automation and cloud security skills for Junior Cyber Engineer-level work.',
+    'Academic grounding in ethical hacking, SOC operations, and digital forensics sits beside public hackathon builds in post-quantum edge tunnels and airgapped tactical demos.',
   ],
 };
 
 export const highlights = [
-  { label: 'Role', value: 'CyberSecOps · Maximus' },
-  { label: 'Degree', value: 'B.S. Cybersecurity · Honors' },
+  { label: 'Title', value: 'Assoc IT Spec · CyberSecOps' },
+  { label: 'Trajectory', value: 'Junior Cyber Engineer' },
   { label: 'Base', value: 'Lakebay, WA' },
 ];
 
-/**
- * Curated highlights mirrored from LinkedIn accomplishments.
- */
 export const linkedinHighlights = [
   {
     title: 'CompTIA Security+ (SY0-701)',
     detail:
-      'Earned Security+ with focus on network security, risk management, and threat mitigation for resilient cyber operations.',
+      'Network security, risk management, and threat mitigation baseline for resilient cyber operations.',
+  },
+  {
+    title: 'CompTIA CySA+ and SecAI+',
+    detail:
+      'Analyst and AI-aware cyber defense credentials supporting detection, vulnerability, and modern threat contexts.',
   },
   {
     title: 'AWS Certified Cloud Practitioner',
     detail:
-      'Verified AWS cloud fundamentals credential supporting cloud security and IT technology development goals.',
+      'Cloud fundamentals supporting cloud security and platform-aware engineering conversations.',
   },
   {
     title: 'ISC2 Certified in Cybersecurity (CC)',
     detail:
-      'Entry-level ISC2 certification covering network security, access control, and core cyber concepts.',
-  },
-  {
-    title: 'Google career certificates',
-    detail:
-      'Completed Google Cybersecurity and Google IT Support Professional Certificates with practice-based coursework in SIEM, Linux, SQL, networking, and support.',
+      'Foundational ISC2 credential covering network security, access control, and core cyber concepts.',
   },
 ];
 
 export const experience = [
   {
-    title: 'Security Operator / Assoc IT Spec — CyberSecOps',
+    title: 'Associate IT Specialist — CyberSecOps',
     org: 'Maximus',
     period: 'Jun 2025 – Present · Hybrid',
     points: [
       'Cybersecurity operations supporting mission-critical systems and secure operating environments.',
-      'Continuing growth in cloud security, automation, and IT technology development alongside day-to-day SecOps work.',
+      'Growing toward Junior Cyber Engineer scope through detection craft, cloud security, and automation alongside day-to-day SecOps.',
+      // Replace with Maximus-safe tool/shift/ticket bullets when approved for public use.
     ],
   },
   {
@@ -116,44 +128,51 @@ export const education = [
 
 export const skills = [
   {
-    group: 'Cyber & mission',
+    group: 'Detect & defend',
     items: [
       'SOC / SecOps',
       'Network security',
       'Threat & vulnerability awareness',
       'SIEM / IDS concepts',
       'Digital forensics foundations',
-      'Ethical hacking foundations',
     ],
   },
   {
-    group: 'Cloud & IT',
-    items: ['AWS fundamentals', 'Cloud security interest', 'Technical support', 'Linux', 'Python', 'SQL'],
+    group: 'Engineer & automate',
+    items: ['Python', 'Linux', 'SQL', 'HTML / CSS / JS', 'React demos', 'Git workflows'],
   },
   {
-    group: 'Build & capture',
-    items: ['HTML / CSS / JS', 'React demos', 'Python scripting', 'Zarf / airgap packaging', 'Evidence-gated capture tooling'],
+    group: 'Cloud & platforms',
+    items: ['AWS fundamentals', 'Cloud security growth path', 'Zarf / airgap packaging', 'Kubernetes exposure'],
+  },
+  {
+    group: 'Capture & communicate',
+    items: [
+      'Evidence-gated past performance',
+      'Requirement mapping',
+      'Solutions briefs',
+      'Technical storytelling',
+    ],
   },
 ];
 
-/** Featured strip on the home page. Full case studies live on projects.html. */
 export const featuredProjects = [
   {
     name: 'Blackbird PQC tunnel',
     blurb: 'NDIA hackathon demonstrator for survivable post-quantum tactical edge communications.',
     tags: ['NDIA', 'PQC', 'Go'],
-    href: '/projects.html#blackbird',
+    href: 'projects.html#blackbird',
   },
   {
     name: 'U Drone Warhacker',
     blurb: 'Airgapped drone, fire, and missile demo with Zarf packaging for offline Kubernetes.',
     tags: ['Warhacker', 'React', 'Zarf'],
-    href: '/projects.html#u-drone',
+    href: 'projects.html#u-drone',
   },
   {
     name: 'Capture response library',
     blurb: 'Evidence-gated past-performance and proposal workflows for federal cyber capture.',
     tags: ['Capture', 'PP', 'Private'],
-    href: '/projects.html#capture-library',
+    href: 'projects.html#capture-library',
   },
 ];

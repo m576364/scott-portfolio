@@ -9,7 +9,7 @@ function statusLabel(status) {
 
 function renderLicense(cert) {
   if (cert.licenseUrl) {
-    return `<a class="btn btn-ghost" href="${escapeHtml(cert.licenseUrl)}"${externalAttrs(cert.licenseUrl)}>View license</a>`;
+    return `<a class="btn btn-primary" href="${escapeHtml(cert.licenseUrl)}"${externalAttrs(cert.licenseUrl)}>Verify credential</a>`;
   }
   return `<span class="license-missing mono">license link pending</span>`;
 }
@@ -30,17 +30,18 @@ mountChrome({
       <p class="eyebrow mono">certifications // credentials</p>
       <h1>Licenses, proof links, and where they apply</h1>
       <p class="lede">
-        Each certification lists a verification URL when available, plus short applicability notes
-        for cyber, capture, and build work. Edit <span class="mono">src/certifications.js</span> to add yours.
+        Each certification links to a Credly or Coursera verification page, plus short applicability notes
+        for CyberSecOps and Junior Cyber Engineer trajectory work.
       </p>
     </section>
 
     <section class="section">
-      <div class="cert-detail-grid">
+      <div class="cert-detail-grid cert-badge-grid">
         ${certifications
           .map(
             (cert) => `
-          <article id="${escapeHtml(cert.id)}" class="cert-detail reveal ${cert.status === 'pending-link' ? 'is-placeholder' : ''}">
+          <article id="${escapeHtml(cert.id)}" class="cert-detail cert-badge-card reveal ${cert.status === 'pending-link' ? 'is-placeholder' : ''}">
+            <div class="cert-mark mono" aria-hidden="true">${escapeHtml((cert.issuer || '?').slice(0, 1))}</div>
             <div class="cert-top">
               <div>
                 <h2>${escapeHtml(cert.name)}</h2>

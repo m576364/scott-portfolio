@@ -31,6 +31,7 @@ export const projects = [
       },
     ],
     visibility: 'public',
+    images: [],
   },
   {
     id: 'u-drone',
@@ -60,6 +61,7 @@ export const projects = [
       },
     ],
     visibility: 'public',
+    images: [],
   },
   {
     id: 'capture-library',
@@ -81,5 +83,6 @@ export const projects = [
     links: [],
     visibility: 'private',
     privateNote: 'Private org repository on Maximus Cyber R&D GitHub Enterprise (Cyber-R-D/capture-response-library).',
+    images: [],
   },
 ];
